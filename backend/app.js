@@ -19,6 +19,9 @@ const clientDashboardRoutes = require('./routes/clientDashboardRoutes');
 const { errorHandler, notFoundHandler } = require('./middlewares/errorHandler');
 
 const app = express();
+if (process.env.NODE_ENV === 'production') {
+    app.set('trust proxy', 1);
+}
 
 // Allowed Origins
 const allowedOrigins = [
