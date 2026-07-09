@@ -16,10 +16,16 @@ const getAPIBase = () => {
 };
 
 const getSocketURL = () => {
-  // Always use localhost:3001 for Socket.io
-  return 'http://localhost:3001';
-};
+  if (
+    typeof window !== 'undefined' &&
+    window.location &&
+    window.location.protocol.startsWith('http')
+  ) {
+    return `${window.location.protocol}//${window.location.host}`;
+  }
 
+  return 'http://localhost:3000';
+};
 // Global API configuration
 const API_CONFIG = {
   BASE: getAPIBase(),
