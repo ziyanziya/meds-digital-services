@@ -2406,10 +2406,10 @@
 
       // Socket.IO real-time updates
       if (typeof io !== 'undefined') {
-        const socket = io(API_CONFIG.SOCKET_URL, {
-          auth: { token: authToken }
-        });
-
+     const socket = io(API_CONFIG.SOCKET_URL, {
+  auth: { token: authToken },
+  transports: ['websocket', 'polling']
+});
         socket.on('order:created', () => {
           refreshDashboard();
         });
