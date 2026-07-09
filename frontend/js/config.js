@@ -12,7 +12,7 @@ const getAPIBase = () => {
     const port = window.location.port ? `:${window.location.port}` : '';
     return `${protocol}//${host}${port}/api`;
   }
-  return 'http://localhost:3001/api';
+  return 'https://meds-digital-services.onrender.com/api';
 };
 
 const getSocketURL = () => {
