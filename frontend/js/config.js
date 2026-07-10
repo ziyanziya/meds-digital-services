@@ -12,12 +12,11 @@ const getAPIBase = () => {
     const port = window.location.port ? `:${window.location.port}` : '';
     return `${protocol}//${host}${port}/api`;
   }
-  return 'http://localhost:3001/api';
+  return 'meds-digital-services.onrender.com/api';
 };
 
 const getSocketURL = () => {
-  // Always use localhost:3001 for Socket.io
-  return 'http://localhost:3001';
+  return 'meds-digital-services.onrender.com';
 };
 
 // Global API configuration
